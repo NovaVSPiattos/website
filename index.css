@@ -5,12 +5,34 @@ h1{
     margin: 0;
     padding: 0;
 }
+.color-blue{
+    color:blue !important;
+}
+h1,p,h5{
+    color: blue !important;
+
+}
+.button-style{
+    width: 100px;
+    overflow: hidden;
+    border-radius: 5px;
+    color: blue ;
+    border: solid 1px rgba(0, 0, 0, 0.15) ;
+    background-color: white ;
+}
+.button-style:active{
+    border-radius: 5px;
+    color: white ;
+    border: 1px rgba(0, 0, 0, 0.15) ;
+    background-color: blue ;
+}
 .bottom-shadow-minimal {
   /* X-offset | Y-offset | Blur | Spread | Color */
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
 }
 .member-a-style{
-    border: 1px solid black !important;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.15)!important;
 }
 .whatreport{
     display: flex;
@@ -27,7 +49,7 @@ h1{
     gap: 20px;
 }
 .nav-link{
-    color: black !important;
+    color: blue !important;
 }
 .navbar-toggler{
     display: none;
@@ -35,6 +57,10 @@ h1{
 .members-card{
     grid-template-columns: repeat(5,auto);
     gap: 10px;
+}
+.activator:active{
+    background-color: blue;
+    color: white;
 }
 @media(max-width:768px){
     .grid-template-4{
