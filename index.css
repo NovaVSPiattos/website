@@ -56,7 +56,7 @@ h1,p,h5{
 .nav-link{
     color: blue !important;
 }
-.navbar-toggler{
+.navbar-toggler-header{
     display: none;
 }
 .members-card{
@@ -70,6 +70,12 @@ h1,p,h5{
 .home-report-grid{
     grid-template-columns: repeat(3,auto);
 }
+.offcanvas {
+    z-index: 2000 !important;
+}
+.offcanvas-backdrop {
+    z-index: 1999 !important;
+}
 @media(max-width:768px){
     .home-report-grid{
     grid-template-columns: repeat(1,auto);
@@ -77,7 +83,7 @@ h1,p,h5{
     .grid-template-4{
         grid-template-columns: repeat(1,auto);
     }
-    .navbar-toggler{
+    .navbar-toggler-header{
         display: block;
     }
     .navs{
