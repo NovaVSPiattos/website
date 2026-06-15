@@ -1,16 +1,19 @@
 body{
     background-color: black;
 }
-h1{
+h1,h2,h3,h4,h5{
     margin: 0;
     padding: 0;
 }
 .color-blue{
     color:blue !important;
 }
+.header{
+    margin-bottom:5px;
+    b
+}
 h1,p,h5{
-    color: blue !important;
-
+    color:blue !important;
 }
 .button-style{
     width: 100px;
@@ -41,12 +44,14 @@ h1,p,h5{
     flex-direction: column;
 }
 .nav-link-margin{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 10px;
 }
 .grid-template-4{
     grid-template-columns: repeat(4,auto);
     gap: 20px;
+}
+.member-grid-logo-title{
+    grid-template-columns: repeat(2,auto);
 }
 .nav-link{
     color: blue !important;
@@ -62,12 +67,15 @@ h1,p,h5{
     background-color: blue;
     color: white;
 }
+.home-report-grid{
+    grid-template-columns: repeat(3,auto);
+}
 @media(max-width:768px){
+    .home-report-grid{
+    grid-template-columns: repeat(1,auto);
+}
     .grid-template-4{
-        grid-template-columns: repeat(2,auto);
-    }
-    .card-section{
-
+        grid-template-columns: repeat(1,auto);
     }
     .navbar-toggler{
         display: block;
