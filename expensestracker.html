@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Expenses Tracker</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div class="header sticky-top border-bottom"> 
+    <nav style="height : 15vh !important;" class="navbar bg-white">
+  <div class="container-fluid">
+    <a style="margin-left:30px;" class="navbar-brand" href="index.html">HOME</a>
+    <div class="navs">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active-color" href="index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="members.html">Members</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="expensestracker.html">Budget Tracker</a>
+              </li>
+                <button type="button" class="btn btn-primary btn-outline-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  LOGIN
+                </button>
+        </ul>
+    </div>
+    <button class="navbar-toggler navbar-toggler-header" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="z-index: 2001;">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container">
+        <h1 class="text-center p-5">LOGIN</h1>
+      </div>
+      <div class="modal-body">
+             <div class="container g-5">
+             <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+                      <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+        </div>
+       
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+        <a href="frema.html">
+          <button type="button" class="btn btn-primary">LOGIN</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contaier-fluid m-0 d-flex">
+    <div class="w-50 ms-lg-0 border">
+        <div class="container m-0">
+            <h5 class="text-center m-5">Expenses Information</h1>
+        </div>
+        <hr>
+        <form action="">
+            <div class="container">
+                <h5>INFORAMTIONS</h5>
+                <div class="form-control">
+                    <div class="d-flex">
+                        <label for="budget">BUDGET : </label>
+                        <div class="budget"></div>
+                    </div>
+                </div>
+                <input type="text " class="form-control" placeholder="ITEM NAME" id="itemname">
+                <div class="d-flex gap-3">
+                    <input type="text " class="form-control " placeholder="ITEM PRICE" id="itemprice">
+                    <input type="text" class="form-control"  placeholder="QUANTITY" id="itemquantity">
+                </div>
+                
+            </div>
+             <button type="button" class="btn btn-dark" onclick="compute()" >calculate</button>
+             <button type="button" class="btn btn-dark" onclick="clearTable()" >clear</button>
+        </form>
+    </div>
+  <div class=" w-50 form-control">
+      <table class="container">
+        <thead>
+          <tr>
+            <th>ITEM NAME</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+          
+   
+
+      </table>
+  </div>
+</div>
+<style>
+  table,th,td{
+    margin: 0;
+    border: solid 1px rgba(0, 0, 0, .15);
+    border-collapse: collapse;
+  }
+  td{
+    color: black;
+    font-family: poppins;
+  }
+    .color{
+          color: var(--bs-body-color) !important;
+    }
+    .marginer{
+        margin: 20px;
+    }
+</style>
+    <script>
+        document.getElementById("items").innerHTML = localStorage.getItem("tabledata");
+        function compute(){
+            const itemname = document.getElementById("itemname").value;
+            const itemprice = document.getElementById("itemprice").value;
+            const itemquantity= document.getElementById("itemquantity").value;
+            const total = itemprice * itemquantity;
+            
+            const items = document.getElementById("items").innerHTML += `
+              <tr>
+                <td>${itemname}</td>
+                <td>${itemprice}</td>
+                <td>${itemquantity}</td>
+                <td>${total}</td>
+              </tr>
+            `;
+              localStorage.setItem("tabledata", document.getElementById("items").innerHTML);
+
+              document.getElementById("itemname").value = "";
+              document.getElementById("itemprice").value = "";
+              document.getElementById("itemquantity").value = "";
+        }
+        function clearTable(){
+          localStorage.removeItem("tabledata");
+          document.getElementById("items").innerHTML = "";
+        }
+
+        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

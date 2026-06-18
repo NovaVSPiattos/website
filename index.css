@@ -5,12 +5,19 @@ h1,h2,h3,h4,h5{
     margin: 0;
     padding: 0;
 }
+.centralizer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .color-blue{
     color:blue !important;
 }
 .header{
     margin-bottom:5px;
-    b
+}
+.responsiver1{
+    grid-template-columns: repeat(5,auto) !important;
 }
 h1,p,h5{
     color:blue !important;
@@ -94,8 +101,14 @@ h1,p,h5{
     .navs{
         display: none;
     }
+    .members-card{
+    grid-template-columns: repeat(2,auto);
+}
 }
 @media(max-width:400px){
+    .members-card{
+    grid-template-columns: repeat(1,auto);
+}
      .grid-template-4{
         grid-template-columns: repeat(1,auto);
     }
